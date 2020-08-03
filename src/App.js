@@ -66,6 +66,10 @@ function App() {
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+      videoPreview.current.srcObject = stream;
+      videoPreview.current.play();
+
       const audioStream = await navigator.mediaDevices.getUserMedia({
         audio: true,
         video: false,
@@ -80,6 +84,7 @@ function App() {
       mediaRecorder = new MediaRecorder(stream, options);
       mediaRecorder.ondataavailable = handleDataAvailable;
       mediaRecorder.onstop = handleStop;
+
       setMediaRecorder(mediaRecorder);
     } catch (error) {
       console.error(error);

@@ -1,0 +1,44 @@
+body {
+  background-color: #181818;
+  color: white;
+  main {
+    width: 95%;
+    display: block;
+    margin: auto;
+    position: relative;
+    h1 {
+      font-size: 40px;
+      line-height: 1;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .cog {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+    }
+    #videoPreview {
+      width: 100%;
+      min-height: 80vh;
+      max-height: 80vh;
+      @media (max-height: 700px) {
+        min-height: 63vh;
+        max-height: 63vh;
+      }
+    }
+    .button-container {
+      padding: 15px 0;
+      button {
+        margin-right: 15px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: white;
+        font-weight: bold;
+      }
+    }
+  }
+}
